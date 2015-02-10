@@ -62,7 +62,7 @@ class PidHelper
 
             if ($return == 0) {
                 // process with the same id is still running
-                return false;
+                return true;
             }
         }
 
