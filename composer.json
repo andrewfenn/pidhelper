@@ -1,0 +1,19 @@
+{
+    "name": "andrewfenn/pid-helper",
+    "description": "A small helper class used to help you check if code is still running",
+    "keywords": ["process", "pid"],
+    "type":"library",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Andrew Fenn",
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "aws/aws-sdk-php": "~2.2"
+    },
+    "autoload": {
+        "psr-0": { "AWSHelper": "src/" }
+    }
+}
