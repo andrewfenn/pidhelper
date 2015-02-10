@@ -6,7 +6,7 @@ twice.
 
 ```
 <?php
-$pidHelper = new PIDHelper('/path/to/dir', 'process.pid');
+$pidHelper = new PIDHelper('/path/to/dir/', 'process.pid');
 
 if ($pidHelper->running()) {
     exit("Script Running\n");
