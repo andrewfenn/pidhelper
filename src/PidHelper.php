@@ -19,7 +19,7 @@ class PidHelper
         $pidFile = $this->directory.$this->filename;
 
         if (!is_writable($pidFile)) {
-            throw new Exception('Can not write to file: '.$pidFile);
+            throw new \Exception('Can not write to file: '.$pidFile);
         }
 
         $file = fopen($pidFile, 'w');
@@ -54,7 +54,7 @@ class PidHelper
         if (!is_dir('/proc/'))
         {
             /* OSX Workaround, not as good as using proc dir on linux, but oh well */
-            exec('ps -Ac -o pid | awk '{print $1}' | grep \'^'.$pid.'$\'', $output, $return);
+            exec('ps -Ac -o pid | awk \'{print $1}\' | grep \'^'.$pid.'$\'', $output, $return);
 
             if ($return == 0) {
                 // process with the same id is still running
@@ -85,7 +85,7 @@ class PidHelper
         }
 
         if (!is_writable($pidFile)) {
-            throw new Exception('Can not write to file: '.$pidFile);
+            throw new \Exception('Can not write to file: '.$pidFile);
         }
 
         return unlink($this->directory.$this->filename);
@@ -94,7 +94,7 @@ class PidHelper
     private function checkDirExists()
     {
         if (!is_dir($this->directory)) {
-            throw new Exception($this->directory.' directory does not exist for pid files');
+            throw new \Exception($this->directory.' directory does not exist for pid files');
         }
     }
 }
