@@ -6,15 +6,16 @@ twice.
 
 ```
 <?php
-$pidHelper = new PIDHelper('/path/to/dir/', 'process.pid');
+use PidHelper/PidHelper;
 
-if ($pidHelper->running()) {
+$pidHelper = new PidHelper('/path/to/dir/', 'process.pid');
+
+if (!$pidHelper->lock()) {
     exit("Script Running\n");
 }
-$pidHelper->begin();
 
 // .... Your code ....
 
 // Optional
-$pidHelper->end();
+$pidHelper->unlock();
 ```

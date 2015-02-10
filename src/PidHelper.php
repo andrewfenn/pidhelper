@@ -1,6 +1,6 @@
-<?php
+<?php namespace PidHelper;
 
-class PIDHelper
+class PidHelper
 {
     public function __construct($directory, $filename)
     {
@@ -11,17 +11,21 @@ class PIDHelper
     /** Writes the process id to a pid file
         @return boolean true if the file was written
     */
-    public function begin()
+    public function lock()
     {
-        self::checkDirExists();
+        if ($this->isRunning())
+            return false;
+
         $pidFile = $this->directory.$this->filename;
 
-        if (!is_writable($pidFile))
-            throw new Exception('Can not write to file: '.$pidFile)
+        if (!is_writable($pidFile)) {
+            throw new Exception('Can not write to file: '.$pidFile);
+        }
 
         $file = fopen($pidFile, 'w');
-        if ($file === false)
+        if ($file === false) {
             return false;
+        }
 
         fputs($file, getmypid());
         fclose($file);
@@ -32,9 +36,9 @@ class PIDHelper
     /** Checks if a process is still running
         @return boolean true if the process is still running
     */
-    public function running()
+    public function isRunning()
     {
-        self::checkDirExists();
+        $this->checkDirExists();
 
         $pidFile = $this->directory.$this->filename;
         if (!file_exists($pidFile)) {
@@ -72,12 +76,16 @@ class PIDHelper
     nice to clean up though.
         @return boolean true if the file exists and was deleted
     */
-    public function end()
+    public function unlock()
     {
-        self::checkDirExists();
+        $this->checkDirExists();
 
         if (!file_exists($this->directory.$this->filename)) {
             return false;
+        }
+
+        if (!is_writable($pidFile)) {
+            throw new Exception('Can not write to file: '.$pidFile);
         }
 
         return unlink($this->directory.$this->filename);
