@@ -18,7 +18,11 @@ class PidHelper
 
         $pidFile = $this->directory.$this->filename;
 
-        if (!is_writable($pidFile)) {
+        if (!is_writable($this->directory)) {
+            throw new \Exception('Can not write to folder: '.$this->directory);
+        }
+
+        if (file_exists($pidFile) && !is_writable($pidFile)) {
             throw new \Exception('Can not write to file: '.$pidFile);
         }
 
