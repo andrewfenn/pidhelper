@@ -6,14 +6,10 @@
     "license":"MIT",
     "authors":[
         {
-            "name":"Andrew Fenn",
+            "name":"Andrew Fenn"
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "aws/aws-sdk-php": "~2.2"
+        "php": ">=5.3.3"
     },
-    "autoload": {
-        "psr-0": { "AWSHelper": "src/" }
-    }
 }
