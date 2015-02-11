@@ -84,7 +84,8 @@ class PidHelper
     {
         $this->checkDirExists();
 
-        if (!file_exists($this->directory.$this->filename)) {
+        $pidFile = $this->directory.$this->filename;
+        if (!file_exists($pidFile)) {
             return false;
         }
 
@@ -92,7 +93,7 @@ class PidHelper
             throw new \Exception('Can not write to file: '.$pidFile);
         }
 
-        return unlink($this->directory.$this->filename);
+        return unlink($pidFile);
     }
 
     private function checkDirExists()
