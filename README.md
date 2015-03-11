@@ -8,7 +8,7 @@ twice.
 
 Add the following to your composer.json file and run ```composer update```.
 
-```
+```json
     "require": {
         "andrewfenn/pid-helper": "dev-master"
     },
@@ -23,7 +23,7 @@ Add the following to your composer.json file and run ```composer update```.
 To use it call the code as shown below. This class will check that the
 process id is still running or not.
 
-```
+```php
 <?php
 use PidHelper/PidHelper;
 
