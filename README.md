@@ -6,7 +6,7 @@ twice.
 
 ### Why yet another PID helper class?
 
-I wanted a process checker that did things propperly on linux. It uses
+I wanted a process checker that did things properly on linux. It uses
 the /proc interface to see if the process is still running. On OSX it
 uses the ps command.
 
