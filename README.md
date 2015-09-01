@@ -4,18 +4,24 @@ Just a small helper class designed to allow you to easily keep
 track of code that is already running so that it doesn't run
 twice.
 
+### Why yet another PID helper class?
+
+I wanted a process checker that did things propperly on linux. It uses
+the /proc interface to see if the process is still running. On OSX it
+uses the ps command.
+
+There is no windows support in this library. If you'd like to add it then
+please submit a pull request that does something similar to the OSX or Linux
+implementations.
+
 ### How to install
 
 Add the following to your composer.json file and run ```composer update```.
 
 ```json
     "require": {
-        "andrewfenn/pid-helper": "dev-master"
-    },
-    "repositories": [{
-        "type": "vcs",
-        "url":  "https://github.com/andrewfenn/pidhelper.git"
-    }],
+        "andrewfenn/pid-helper": "0.1.0"
+    }
 ```
 
 ### How to use

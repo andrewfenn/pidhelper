@@ -6,11 +6,12 @@
     "license":"MIT",
     "authors":[
         {
-            "name":"Andrew Fenn"
+            "name":"Andrew Fenn",
+            "homepage":"https://github.com/andrewfenn"
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.5"
     },
     "autoload": {
         "psr-4": {"PidHelper\\": "src/"}
