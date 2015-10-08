@@ -1,5 +1,11 @@
 # PID Helper
 
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
+[![Total Downloads](https://img.shields.io/packagist/dd/andrewfenn/pid-helper.svg?style=flat-square)](https://packagist.org/packages/andrewfenn/pid-helper)
+[![Total Downloads](https://img.shields.io/packagist/dm/andrewfenn/pid-helper.svg?style=flat-square)](https://packagist.org/packages/andrewfenn/pid-helper)
+[![Total Downloads](https://img.shields.io/packagist/dt/andrewfenn/pid-helper.svg?style=flat-square)](https://packagist.org/packages/andrewfenn/pid-helper)
+
 Just a small helper class designed to allow you to easily keep
 track of code that is already running so that it doesn't run
 twice.
