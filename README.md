@@ -1,6 +1,7 @@
 # PID Helper
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Quality Score](https://img.shields.io/scrutinizer/g/andrewfenn/pidhelper.svg?style=flat-square)](https://scrutinizer-ci.com/g/andrewfenn/pidhelper)
 
 [![Total Downloads](https://img.shields.io/packagist/dd/andrewfenn/pid-helper.svg?style=flat-square)](https://packagist.org/packages/andrewfenn/pid-helper)
 [![Total Downloads](https://img.shields.io/packagist/dm/andrewfenn/pid-helper.svg?style=flat-square)](https://packagist.org/packages/andrewfenn/pid-helper)
